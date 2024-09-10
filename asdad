@@ -1,0 +1,33 @@
+                             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\http\client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Usuario\Desktop\Nueva carpeta (5)\ppfun2-master\ppf-bot.py", line 654, in <module>
+    main()
+  File "C:\Users\Usuario\Desktop\Nueva carpeta (5)\ppfun2-master\ppf-bot.py", line 643, in main
+    run_client()
+  File "C:\Users\Usuario\Desktop\Nueva carpeta (5)\ppfun2-master\ppf-bot.py", line 547, in run_client
+    chunk_data = get_chunks(config.image.canv_id, c_start_x, c_start_y, c_occupied_x, c_occupied_y)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\Desktop\Nueva carpeta (5)\ppfun2-master\ppf-bot.py", line 163, in get_chunks
+    row = np.concatenate((row, get_chunk(d, x + xs, y + ys)), axis=1)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\Desktop\Nueva carpeta (5)\ppfun2-master\ppf-bot.py", line 140, in get_chunk
+    data = sess.get(f'https://pixelplanet.fun/chunks/{d}/{x}/{y}.bmp').content
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Roaming\Python\Python312\site-packages\requests\sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Roaming\Python\Python312\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Roaming\Python\Python312\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Usuario\AppData\Roaming\Python\Python312\site-packages\requests\adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
